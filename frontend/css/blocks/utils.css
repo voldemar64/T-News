@@ -1,0 +1,224 @@
+/* Utility Classes */
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-secondary, #666);
+}
+
+/* Error State */
+.error-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-error, #e74c3c);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state__message {
+    font-size: 18px;
+    color: var(--color-text-primary, #1a1a1a);
+    margin: 0 0 8px 0;
+}
+
+.empty-state__hint {
+    font-size: 14px;
+    color: var(--color-text-secondary, #666);
+    margin: 0;
+}
+
+/* Login Prompt */
+.login-prompt {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-prompt__message {
+    font-size: 16px;
+    color: var(--color-text-secondary, #666);
+    margin: 0;
+}
+
+/* Auth Card Errors */
+.auth-card__errors {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.auth-card__error {
+    color: var(--color-error, #e74c3c);
+    font-size: 14px;
+    margin: 0;
+    padding: 8px 12px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 6px;
+}
+
+/* Character Counter */
+.char-counter {
+    font-size: 12px;
+    color: var(--color-text-secondary, #666);
+    text-align: right;
+    margin-top: 4px;
+}
+
+.char-counter--warning {
+    color: var(--color-warning, #f39c12);
+}
+
+/* Profile Edit */
+.profile-edit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-edit-textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 60px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.profile-edit-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, #f5c400);
+}
+
+.profile-edit-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.profile-edit-input:focus {
+    outline: none;
+    border-color: var(--color-primary, #f5c400);
+}
+
+.profile-edit-container .button {
+    align-self: flex-start;
+}
+
+.profile-edit-container--inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.profile-edit-container--inline .profile-edit-input {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Profile Follow Button */
+.profile-follow-btn {
+    margin-left: 11px;
+    margin-top: 30px;
+    align-self: flex-start;
+}
+
+/* Profile Posts Empty */
+.profile-posts__empty {
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    padding: 40px 20px;
+}
+
+/* Icon Button */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+    background-color: var(--color-bg-secondary, #f5f5f5);
+}
+
+/* Like Button Active State */
+.like-button--active {
+    color: var(--color-error, #e74c3c);
+}
+
+.like-button--active .like-button__icon {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-edit-container {
+        max-width: 100%;
+    }
+
+    .profile-edit-input {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-edit-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-edit-input {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .profile-edit-textarea {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .profile-edit-container--inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-edit-container--inline .profile-edit-input {
+        width: 100%;
+        flex: none;
+    }
+}
+
+

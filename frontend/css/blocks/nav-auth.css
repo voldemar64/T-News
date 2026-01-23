@@ -1,0 +1,39 @@
+.nav-auth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 16px;
+}
+
+.nav-auth__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    height: 24px;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.nav-auth__link:hover {
+    color: var(--color-text-primary);
+}
+
+.nav-auth__icon {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .nav-auth {
+        display: none;
+    }
+}

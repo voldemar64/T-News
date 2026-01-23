@@ -1,0 +1,79 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-m);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-body);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-white);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-heading);
+    color: var(--color-text-primary);
+}
+
+h2 {
+    font-size: var(--font-size-heading-5);
+}
+
+a {
+    color: var(--color-primary-blue);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    transition: all var(--transition-normal);
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 1;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--color-primary-blue);
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--color-primary-yellow);
+    color: var(--color-text-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

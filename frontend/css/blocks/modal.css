@@ -1,0 +1,224 @@
+/* Modal Component */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-overlay--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: var(--color-bg-primary, #fff);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    animation: modalSlideIn 0.2s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+}
+
+.modal__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-primary, #1a1a1a);
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text-secondary, #666);
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal__close:hover {
+    background-color: var(--color-bg-secondary, #f5f5f5);
+}
+
+.modal__content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Comments List inside Modal */
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.comments-empty {
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    padding: 20px 0;
+}
+
+/* Comment Component */
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background: var(--color-bg-secondary, #f5f5f5);
+    border-radius: 8px;
+    position: relative;
+}
+
+.comment__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comment__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment__username {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-text-primary, #1a1a1a);
+}
+
+.comment__content {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-primary, #1a1a1a);
+    margin: 0;
+}
+
+.comment__delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.comment:hover .comment__delete {
+    opacity: 1;
+}
+
+/* Comment Form */
+.comment-form {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border, #e5e5e5);
+}
+
+.comment-form__textarea {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 8px;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 40px;
+}
+
+.comment-form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, #f5c400);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .modal {
+        max-width: 600px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        max-height: 90vh;
+        border-radius: var(--radius-lg);
+    }
+
+    .modal__header {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .modal__title {
+        font-size: 16px;
+    }
+
+    .modal__content {
+        padding: var(--spacing-lg);
+    }
+
+    .comment {
+        padding: var(--spacing-md);
+    }
+
+    .comment__username {
+        font-size: 13px;
+    }
+
+    .comment__content {
+        font-size: 13px;
+    }
+
+    .comment-form {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .comment-form__textarea {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+

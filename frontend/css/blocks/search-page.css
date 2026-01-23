@@ -1,0 +1,156 @@
+/* Search Page */
+
+.search-page {
+    padding: 24px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-page__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.search-type {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    background: var(--color-bg-secondary, #f5f5f5);
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.search-type__btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--color-text-secondary, #666);
+    transition: all 0.2s ease;
+}
+
+.search-type__btn:hover {
+    color: var(--color-text-primary, #1a1a1a);
+}
+
+.search-type__btn--active {
+    background: var(--color-bg-primary, #fff);
+    color: var(--color-text-primary, #1a1a1a);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Results */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.search-prompt {
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    padding: 40px 0;
+}
+
+.search-loading {
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    padding: 40px 0;
+}
+
+.search-error {
+    text-align: center;
+    color: var(--color-error, #e74c3c);
+    padding: 40px 0;
+}
+
+.search-empty {
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    padding: 40px 0;
+}
+
+/* User Card */
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--color-bg-primary, #fff);
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 12px;
+    transition: box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-card__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.user-card__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-card__username {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--color-text-primary, #1a1a1a);
+}
+
+.user-card__bio {
+    font-size: 14px;
+    color: var(--color-text-secondary, #666);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search-page {
+        padding: var(--spacing-xl) var(--spacing-2xl);
+        max-width: 100%;
+    }
+
+    .search-page__container {
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-page {
+        padding: var(--spacing-lg);
+    }
+
+    .search-page__container {
+        gap: var(--spacing-lg);
+    }
+
+    .user-card {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .user-card__username {
+        font-size: 14px;
+    }
+
+    .user-card__bio {
+        font-size: 12px;
+    }
+}
+
+

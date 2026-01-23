@@ -1,0 +1,315 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 97px;
+    width: 100%;
+    max-width: 824px;
+    margin: 44px auto 0;
+}
+
+.profile-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+}
+
+.profile-header__avatar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 128px;
+    height: 128px;
+    background: #FFFFFF;
+    border: 3px solid #AFF218;
+    border-radius: 64px;
+}
+
+.profile-header__avatar-img {
+    width: 118px;
+    height: 118px;
+    border-radius: 1000px;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.profile-header__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 14px;
+    margin-left: 152px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: calc(100% - 152px);
+    box-sizing: border-box;
+}
+
+.profile-header__name-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.profile-header__name {
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    font-feature-settings: 'liga' off;
+    color: rgba(0, 0, 0, 0.8);
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.profile-header__bio-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.profile-header__bio {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px 0 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.icon-button:hover {
+    opacity: 0.6;
+}
+
+.button--outline {
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid rgba(0, 16, 36, 0.12);
+    background: transparent;
+    color: #126DF7;
+}
+
+.button--outline:hover {
+    background: rgba(36, 74, 127, 0.06);
+}
+
+.button--blue {
+    position: absolute;
+    left: 11px;
+    top: 150px;
+    background: #428BF9;
+    color: #FFFFFF;
+}
+
+.button--blue:hover {
+    background: #2E7BE0;
+}
+
+.button--small-alt {
+    min-height: 32px;
+    padding: 4px 8px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.profile-post-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 18px 8px 16px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 16, 36, 0.03);
+    border-radius: 12px;
+    margin-top: var(--spacing-xl);
+}
+
+.profile-textarea {
+    width: 100%;
+    height: 112px;
+    padding: 16px 0 0;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.profile-textarea::placeholder {
+    color: #9299A2;
+}
+
+.button--send {
+    position: absolute;
+    right: 0;
+    bottom: -57px;
+    min-height: 32px;
+    padding: 4px 8px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile {
+        padding: 0 var(--spacing-xl);
+        gap: var(--spacing-2xl);
+    }
+
+    .profile-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .profile-header__avatar {
+        width: 112px;
+        height: 112px;
+    }
+
+    .profile-header__avatar-img {
+        width: 102px;
+        height: 102px;
+    }
+
+    .profile-header__info {
+        margin-left: 136px;
+        max-width: calc(100% - 136px);
+    }
+
+    .profile-header__name {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .profile-header__name-edit,
+    .profile-header__bio-edit {
+        max-width: 100%;
+    }
+
+    .profile-post-form {
+        margin-top: var(--spacing-2xl);
+        clear: both;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile {
+        padding: 0 var(--spacing-lg);
+        gap: var(--spacing-xl);
+        margin-top: var(--spacing-xl);
+    }
+
+    .profile-header {
+        padding: 0;
+    }
+
+    .profile-header__avatar {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .profile-header__avatar-img {
+        width: 86px;
+        height: 86px;
+    }
+
+    .profile-header__info {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-header__name {
+        font-size: 24px;
+        line-height: 28px;
+        max-width: 100%;
+    }
+
+    .profile-header__bio {
+        max-width: 100%;
+    }
+
+    .profile-header__name-edit,
+    .profile-header__bio-edit {
+        width: 100%;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .button--outline {
+        position: relative;
+        margin-top: var(--spacing-md);
+        align-self: flex-start;
+    }
+
+    .button--blue {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-top: var(--spacing-md);
+        align-self: flex-start;
+    }
+
+    .profile-post-form {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .button--send {
+        position: relative;
+        bottom: 0;
+        margin-top: var(--spacing-md);
+        align-self: flex-end;
+    }
+}

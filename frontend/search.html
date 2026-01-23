@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск - T-News</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__left">
+                <a href="index.html" class="header__logo">
+                    <img src="images/logo.svg" alt="T-News" class="header__logo-img">
+                </a>
+                <div class="search">
+                    <input type="search" class="search__input" placeholder="Поиск" aria-label="Поиск">
+                </div>
+            </div>
+            <div class="header__right">
+                <nav class="nav-auth">
+                    <a href="register.html" class="nav-auth__link">
+                        <span>Зарегистроваться</span>
+                        <img src="images/login.svg" alt="" class="nav-auth__icon" width="24" height="24">
+                    </a>
+                    <a href="login.html" class="nav-auth__link">
+                        <span>Войти</span>
+                        <img src="images/login.svg" alt="" class="nav-auth__icon" width="24" height="24">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="search-page">
+        <div class="search-page__container">
+            <div class="search-type">
+                <button type="button" class="search-type__btn search-type__btn--users search-type__btn--active">
+                    Пользователи
+                </button>
+                <button type="button" class="search-type__btn search-type__btn--posts">
+                    Посты
+                </button>
+            </div>
+
+            <div class="search-results">
+                <p class="search-prompt">Введите запрос для поиска</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/pages/search.ts"></script>
+</body>
+</html>
+
+

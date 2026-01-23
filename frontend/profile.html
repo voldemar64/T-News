@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - T-News</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__left">
+                <a href="index.html" class="header__logo">
+                    <img src="images/logo.svg" alt="T-News" class="header__logo-img">
+                </a>
+                <div class="search">
+                    <input type="search" class="search__input" placeholder="Поиск по T-News" aria-label="Поиск">
+                </div>
+            </div>
+            <div class="header__right">
+                <nav class="nav-auth">
+                    <a href="login.html" class="nav-auth__link">
+                        <span>Выйти</span>
+                        <img src="images/login.svg" alt="" class="nav-auth__icon" width="24" height="24">
+                    </a>
+                </nav>
+                <a href="profile.html" class="profile-icon">
+                    <img src="images/default_avatar.svg" alt="Профиль" class="profile-icon__img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile">
+        <div class="profile-header">
+            <div class="profile-header__avatar">
+                <img src="images/avatar.svg" alt="Луций Анней Сенека" class="profile-header__avatar-img">
+            </div>
+            <div class="profile-header__info">
+                <div class="profile-header__name-edit">
+                    <h1 class="profile-header__name">Луций Анней Сенека</h1>
+                    <button type="button" class="icon-button" aria-label="Редактировать имя">
+                        <img src="images/edit.svg" alt="" width="24" height="24">
+                    </button>
+                </div>
+                <div class="profile-header__bio-edit">
+                    <p class="profile-header__bio">
+                        Обо мне: римский философ-стоик, поэт и государственный деятель.
+Воспитатель Нерона и один из крупнейших представителей стоицизма.
+Сын Луция (Марка) Аннея Сенеки Старшего (выдающегося ритора и историка) и Гельвии, младший брат Юния Галлиона. Автор «Нравственных писем к Луцилию», ряда философских трактатов и трагедий
+                    </p>
+                    <button type="button" class="icon-button" aria-label="Редактировать биографию">
+                        <img src="images/edit.svg" alt="" width="16" height="16">
+                    </button>
+                </div>
+            </div>
+            <button type="button" class="button button--outline button--small-alt">Настройки</button>
+            <button type="button" class="button button--blue button--small-alt">Изменить фото</button>
+        </div>
+
+        <div class="profile-post-form">
+            <textarea class="profile-textarea" placeholder="Введите свой пост" aria-label="Новый пост"></textarea>
+            <button type="button" class="button button--primary button--send">Отправить</button>
+        </div>
+
+        <article class="news-card">
+            <div class="news-card__header">
+                <img src="images/avatar.svg" alt="" class="news-card__avatar-img">
+                <h2 class="news-card__author">Луций Анней Сенека</h2>
+            </div>
+            <div class="news-card__body">
+                <p class="news-card__content">
+                    Бывают заблуждения, имеющие видимость истин
+                </p>
+            </div>
+            <div class="news-card__footer">
+                <button type="button" class="like-button" aria-label="Нравится">
+                    <img src="images/heart.svg" alt="" class="like-button__icon" width="24" height="24">
+                    <span class="like-button__count">1</span>
+                </button>
+                <button type="button" class="button button--secondary button--small" aria-label="Комментарии">
+                    <span>Комментарии 0</span>
+                </button>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="/src/pages/profile.ts"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-News | Главная</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__left">
+                <a href="index.html" class="header__logo">
+                    <img src="images/logo.svg" alt="T-News" class="header__logo-img">
+                </a>
+                <div class="search">
+                    <input type="search" class="search__input" placeholder="Поиск" aria-label="Поиск">
+                </div>
+            </div>
+            <div class="header__right">
+                <nav class="nav-auth">
+                    <a href="register.html" class="nav-auth__link">
+                        <span>Зарегистроваться</span>
+                        <img src="images/login.svg" alt="" class="nav-auth__icon" width="24" height="24">
+                    </a>
+                    <a href="login.html" class="nav-auth__link">
+                        <span>Войти</span>
+                        <img src="images/login.svg" alt="" class="nav-auth__icon" width="24" height="24">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="news-feed">
+        <article class="news-card">
+            <div class="news-card__header">
+                <img src="images/avatar.svg" alt="" class="news-card__avatar-img">
+                <h2 class="news-card__author">Луций Анней Сенека</h2>
+            </div>
+            <div class="news-card__body">
+                <p class="news-card__content">
+                    Не слишком ли часто ты совершал это путешествие от себя к делам, никогда не возвращаясь назад к самому себе?
+                </p>
+            </div>
+            <div class="news-card__footer">
+                <button type="button" class="like-button" aria-label="Нравится">
+                    <img src="images/heart.svg" alt="" class="like-button__icon" width="16" height="16">
+                    <span class="like-button__count">21</span>
+                </button>
+                <button type="button" class="button button--secondary button--small" aria-label="Комментарии">
+                    <span>Комментарии</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="news-card__header">
+                <img src="images/avatar.svg" alt="" class="news-card__avatar-img">
+                <h2 class="news-card__author">Луций Анней Сенека</h2>
+            </div>
+            <div class="news-card__body">
+                <p class="news-card__content">
+                    Стоит нам только пожелать, как мы тотчас же получаем самих себя обратно: нам не нужно просить никого о разрешении, не нужно откупаться! Пора же прожить все, что отпущено, не отдавая ни часа во власть другому. Пока мы откладываем жизнь, она проходит. Все у нас чужое, лишь время наше, единственное летучее и ускользающее благо, которым наделила нас природа, и всякий, кто захочет, может нас его лишить.
+                </p>
+            </div>
+            <div class="news-card__footer">
+                <button type="button" class="like-button" aria-label="Нравится">
+                    <img src="images/heart.svg" alt="" class="like-button__icon" width="16" height="16">
+                    <span class="like-button__count">9</span>
+                </button>
+                <button type="button" class="button button--secondary button--small" aria-label="Комментарии">
+                    <span>Комментарии</span>
+                </button>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="/src/pages/feed.ts"></script>
+</body>
+</html>

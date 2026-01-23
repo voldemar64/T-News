@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - T-News</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="images/logo.svg" alt="T-News" class="header__logo-img">
+            </div>
+        </div>
+    </header>
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-card__header">
+                <h2 class="auth-card__title">Регистрация</h2>
+            </div>
+            <form class="auth-card__content" action="#" method="post">
+                <div class="input">
+                    <input type="text" id="login" name="login" class="input__field" placeholder="Логин" required aria-label="Логин">
+                </div>
+                <div class="input">
+                    <input type="password" id="password" name="password" class="input__field" placeholder="Пароль" required aria-label="Пароль">
+                </div>
+                <div class="input">
+                    <input type="password" id="confirm-password" name="confirm-password" class="input__field" placeholder="Повторите пароль" required aria-label="Повторите пароль">
+                </div>
+                <div class="auth-card__footer">
+                    <button type="button" class="button button--secondary" onclick="window.location.href='login.html'">Войти</button>
+                    <button type="submit" class="button button--primary">Зарегистроваться</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="/src/pages/auth.ts"></script>
+</body>
+</html>
