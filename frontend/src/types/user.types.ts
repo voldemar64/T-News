@@ -8,11 +8,6 @@ export interface User {
   updatedAt?: string;
 }
 
-export interface NewUser {
-  username: string;
-  password: string;
-}
-
 export interface UpdateUser {
   username?: string;
   bio?: string;
@@ -24,12 +19,7 @@ export interface AuthResponse {
   user: User;
 }
 
-export interface LoginCredentials {
-  username: string;
-  password: string;
-}
-
-export interface RegisterCredentials {
+export interface UserCredentials {
   username: string;
   password: string;
 }

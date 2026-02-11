@@ -1,14 +1,14 @@
 import { ENDPOINTS } from '../config/api';
 import { apiClient } from './api';
 import { setToken, setUser, clearAuthData } from '@/utils';
-import type {
-  AuthResponse,
-  LoginCredentials,
-  RegisterCredentials,
-} from '@/types';
+import type { AuthResponse, UserCredentials } from '@/types';
 
 class AuthService {
-  async login(credentials: LoginCredentials): Promise<AuthResponse> {
+  /**
+   * Вход в систему
+   * ВНИМАНИЕ: Пароли передаются в открытом виде. В продакшене обязательно использовать HTTPS!
+   */
+  async login(credentials: UserCredentials): Promise<AuthResponse> {
     const response = await apiClient.post<AuthResponse>(
       ENDPOINTS.AUTH.LOGIN,
       credentials,
@@ -21,7 +21,11 @@ class AuthService {
     return response;
   }
 
-  async register(credentials: RegisterCredentials): Promise<AuthResponse> {
+  /**
+   * Регистрация нового пользователя
+   * ВНИМАНИЕ: Пароли передаются в открытом виде. В продакшене обязательно использовать HTTPS!
+   */
+  async register(credentials: UserCredentials): Promise<AuthResponse> {
     const response = await apiClient.post<AuthResponse>(
       ENDPOINTS.AUTH.REGISTER,
       credentials,
