@@ -47,7 +47,7 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .auth-container {
-        padding: var(--spacing-2xl);
+        padding: var(--spacing-3xl);
     }
 
     .auth-card__header {
@@ -59,14 +59,23 @@
     }
 }
 
+@media (min-width: 1025px) {
+    .auth-container {
+        padding: var(--spacing-3xl) var(--spacing-2xl);
+    }
+}
+
 @media (max-width: 768px) {
     .auth-container {
         padding: var(--spacing-lg);
+        align-items: flex-start;
+        padding-top: var(--spacing-3xl);
     }
 
     .auth-card {
         max-width: 100%;
         border-radius: var(--radius-lg);
+        box-shadow: none;
     }
 
     .auth-card__header {
@@ -79,12 +88,13 @@
     }
 
     .auth-card__content {
-        padding: 0 var(--spacing-lg);
+        padding: 0 var(--spacing-lg) var(--spacing-lg);
         gap: var(--spacing-lg);
     }
 
     .auth-card__footer {
         flex-direction: column;
         padding: 0 var(--spacing-lg) var(--spacing-lg);
+        gap: var(--spacing-md);
     }
 }

@@ -56,8 +56,8 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .header__container {
-        padding: 0 var(--spacing-xl);
         max-width: 100%;
+        padding: 0 var(--spacing-3xl);
     }
 
     .header__left {
