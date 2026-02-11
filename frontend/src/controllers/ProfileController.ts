@@ -1,15 +1,9 @@
-import {
-  PostView,
-  PostFormView,
-  CommentView,
-  CommentFormView,
-  ModalView,
-} from '@/views';
+import { PostView, PostFormView } from '@/views';
 import {
   postService,
   userService,
   likeService,
-  commentService,
+  commentModalService,
   followService,
 } from '@/services';
 import { getUser, setUser, isAuthenticated } from '@/utils';
@@ -21,7 +15,7 @@ import {
 } from '@/utils';
 import { ROUTES, DEFAULT_IMAGES } from '../config/constants';
 import { validateBio } from '@/utils';
-import type { Post, Comment, User } from '@/types';
+import type { Post, User } from '@/types';
 
 export class ProfileController {
   private postsContainer: HTMLElement | null = null;
@@ -30,8 +24,6 @@ export class ProfileController {
   private profileUser: User | null = null;
   private isOwnProfile: boolean = false;
   private postForm: PostFormView | null = null;
-  private commentsModal: ModalView | null = null;
-  private currentPostId: string | null = null;
 
   async init(): Promise<void> {
     this.currentUser = getUser();
@@ -518,91 +510,11 @@ export class ProfileController {
   }
 
   private async handleOpenComments(postId: string): Promise<void> {
-    this.currentPostId = postId;
-
-    try {
-      const comments = await commentService.getByPost(postId);
-      this.showCommentsModal(comments);
-    } catch (error) {
-      console.error('Failed to load comments:', error);
-    }
-  }
-
-  private showCommentsModal(comments: Comment[]): void {
-    this.commentsModal = new ModalView({
-      title: 'Комментарии',
-      onClose: () => {
-        this.commentsModal?.destroy();
-        this.commentsModal = null;
-        this.currentPostId = null;
-      },
-    });
-
-    this.commentsModal.render();
-
-    const content = createElement('div', { className: 'comments-list' });
-
-    if (comments.length === 0) {
-      const emptyState = createElement('p', {
-        className: 'comments-empty',
-        textContent: 'Комментариев пока нет',
-      });
-      content.appendChild(emptyState);
-    } else {
-      comments.forEach(comment => {
-        const commentView = new CommentView({
-          comment,
-          currentUser: this.currentUser,
-          onDelete: this.handleDeleteComment.bind(this),
-        });
-        content.appendChild(commentView.render());
-      });
-    }
-
-    this.commentsModal.setContent(content);
-
-    if (isAuthenticated()) {
-      const commentForm = new CommentFormView({
-        onSubmit: this.handleAddComment.bind(this),
-      });
-      this.commentsModal.appendContent(commentForm.render());
-    }
-
-    this.commentsModal.open();
-  }
-
-  private async handleAddComment(content: string): Promise<void> {
-    if (!this.currentPostId) return;
-
-    try {
-      await commentService.create(this.currentPostId, { content });
-
-      const comments = await commentService.getByPost(this.currentPostId);
-      this.commentsModal?.destroy();
-      this.showCommentsModal(comments);
-
-      const postView = this.postViews.get(this.currentPostId);
-      postView?.updateCommentsCount(comments.length);
-    } catch (error) {
-      console.error('Failed to add comment:', error);
-    }
-  }
-
-  private async handleDeleteComment(commentId: string): Promise<void> {
-    if (!this.currentPostId) return;
-
-    try {
-      await commentService.delete(commentId);
-
-      const comments = await commentService.getByPost(this.currentPostId);
-      this.commentsModal?.destroy();
-      this.showCommentsModal(comments);
-
-      const postView = this.postViews.get(this.currentPostId);
-      postView?.updateCommentsCount(comments.length);
-    } catch (error) {
-      console.error('Failed to delete comment:', error);
-    }
+    await commentModalService.openCommentsModal(
+      postId,
+      this.postViews,
+      this.currentUser
+    );
   }
 
   private async handleDelete(postId: string): Promise<void> {

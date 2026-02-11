@@ -1,57 +1,6 @@
-@media (max-width: 768px) {
-    :root {
-        --spacing-2xl: 16px;
-        --card-width: 100%;
-    }
-
-    .header__container {
-        padding: 0 var(--spacing-lg);
-    }
-
-    .auth-container {
-        padding: var(--spacing-lg);
-        align-items: flex-start;
-        padding-top: var(--spacing-3xl);
-    }
-
-    .auth-card {
-        box-shadow: none;
-        border-radius: var(--radius-lg);
-    }
-
-    .auth-card__header {
-        padding: var(--spacing-lg);
-    }
-
-    .auth-card__content {
-        padding: 0 var(--spacing-lg) var(--spacing-lg);
-        gap: var(--spacing-lg);
-    }
-
-    .auth-card__footer {
-        flex-direction: column;
-        padding: 0 var(--spacing-lg) var(--spacing-lg);
-        gap: var(--spacing-md);
-    }
-
-    .button {
-        width: 100%;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .header__container {
-        max-width: 100%;
-        padding: 0 var(--spacing-3xl);
-    }
-
-    .auth-container {
-        padding: var(--spacing-3xl);
-    }
-}
-
-@media (min-width: 1025px) {
-    .auth-container {
-        padding: var(--spacing-3xl) var(--spacing-2xl);
-    }
-}
+/* This file is kept for backward compatibility but styles have been moved to component-specific files:
+   - Variables moved to variables.css
+   - Header styles moved to blocks/header.css
+   - Auth card styles moved to blocks/auth-card.css
+   - Button styles moved to blocks/button.css
+*/
