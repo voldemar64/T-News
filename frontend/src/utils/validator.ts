@@ -72,39 +72,6 @@ export function validatePasswordConfirm(
   return { valid: errors.length === 0, errors };
 }
 
-export function validatePostContent(content: string): ValidationResult {
-  const errors: string[] = [];
-
-  if (!content || content.trim().length === 0) {
-    errors.push('Содержание поста обязательно');
-    return { valid: false, errors };
-  }
-
-  if (content.length > VALIDATION.POST_MAX_LENGTH) {
-    errors.push(
-      `Пост должен быть не более ${VALIDATION.POST_MAX_LENGTH} символов`
-    );
-  }
-
-  return { valid: errors.length === 0, errors };
-}
-
-export function validateCommentContent(content: string): ValidationResult {
-  const errors: string[] = [];
-
-  if (!content || content.trim().length === 0) {
-    errors.push('Содержание комментария обязательно');
-    return { valid: false, errors };
-  }
-
-  if (content.length > VALIDATION.COMMENT_MAX_LENGTH) {
-    errors.push(
-      `Комментарий должен быть не более ${VALIDATION.COMMENT_MAX_LENGTH} символов`
-    );
-  }
-
-  return { valid: errors.length === 0, errors };
-}
 
 export function validateBio(bio: string): ValidationResult {
   const errors: string[] = [];
